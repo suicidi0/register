@@ -1,55 +1,65 @@
-body {
+/* Resetting default margin and padding */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
   background-color: #2a9df4;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
+/* Background container */
 .background-container {
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 53px;
+  padding: 50px;
   border-radius: 13px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
+/* Main container */
 .container {
-  text-align: center;
   width: 400px;
+  text-align: center;
 }
 
-.menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* Header */
 .header {
   font-size: 32px;
-  margin-bottom: 27px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.input-box {
-  margin-bottom: 13px;
+/* Form styles */
+.menu {
   width: 100%;
 }
 
-.input-box input {
-  width: calc(100% - 22px);
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
   padding: 13px;
   border: 1px solid #ccc;
   border-radius: 7px;
   font-size: 16px;
 }
 
+/* Button container */
 .button-container {
   display: flex;
   justify-content: space-between;
-  width: 100%;
 }
 
+/* Button styles */
 .button {
   width: 48%;
   background-color: #ff9900;
