@@ -1,4 +1,19 @@
 function login() {
+  var royal_email = document.getElementById("royal_email").value;
+  var password = document.getElementById("password").value;
+
+  if (!royal_email) {
+    alert("Please fill with a valid email or username.")
+    return
+  }
+
+  if (!password) {
+    return
+  }
+
+  //Debug message
+  alert("Succcessfully logged in.")
+
   console.log("Login button clicked");
 }
 

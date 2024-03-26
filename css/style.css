@@ -43,14 +43,26 @@ body {
 
 .form-group {
   margin-bottom: 20px;
+  position: relative; /* Make the container relative */
 }
 
 .form-group input {
-  width: 100%;
+  width: calc(100% - 26px); /* Adjust input width for the toggle button */
   padding: 13px;
   border: 1px solid #ccc;
   border-radius: 7px;
   font-size: 16px;
+}
+
+/* Style the toggle-password button */
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 25px; /* Adjust position from the right */
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
 }
 
 /* Button container */
