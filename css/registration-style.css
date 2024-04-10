@@ -43,6 +43,7 @@ body {
 .input-box {
   margin-bottom: 20px;
   display: flex;
+  position: relative;
 }
 
 .input-box input {
@@ -51,28 +52,31 @@ body {
   border: 1px solid #ccc;
   border-radius: 7px;
   font-size: 16px;
+  width: calc(50% - 5px);
+  box-sizing: border-box;
 }
 
-/* Add spacer between First Name and Last Name inputs */
+/* Set margin-right for First Name input */
 .input-box #first-name {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
-/* Add spacer after First Name input */
-.input-box #first-name {
-  margin-right: 10px;
+/* Set margin-left for Last Name input */
+.input-box #last-name {
+  margin-left: 5px;
 }
 
 /* Button container */
 .button-container {
   margin-top: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 /* Button styles */
-.signup-button {
-  width: 75%;
+.signup-button,
+.back-button {
+  width: 48%;
   background-color: #ff9900;
   color: #fff;
   border: none;
@@ -80,24 +84,15 @@ body {
   border-radius: 7px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .signup-button:hover {
   background-color: #cc7a00;
 }
 
-/* Back button styles */
 .back-button {
-  text-decoration: none;
-  color: #fff;
-  background-color: rgb(255, 85, 85);
-  font-size: 14px;
-  display: inline-block;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+  background-color: #ff5555;
 }
 
 .back-button:hover {
@@ -111,11 +106,6 @@ body {
   right: 15px;
   transform: translateY(-50%);
   cursor: pointer;
-}
-
-/* Adjust the input box position */
-.input-box {
-  position: relative;
 }
 
 /* Style the toggle-password button */
