@@ -5,7 +5,7 @@ function login() {
   if (!royal_email) {
     alert("Please fill with a valid email or username.")
     return
-  }
+  }gtrgtrg
 
   if (!password) {
     return
