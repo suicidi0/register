@@ -3,7 +3,7 @@
 
 ## TODO
 
-* JSON Database;
-* Visual rework (colors, background e etc);
-* Two factor Authentication
-* Add more features?
+* Mongo database
+* Visual rework (cores, fundo e etc);
+* Autenticação de dois fatores depois do login
+* Criar mais uma ou duas telas
