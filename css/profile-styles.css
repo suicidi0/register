@@ -5,7 +5,7 @@
 }
 
 body { 
-    background-color: #2a9df4;
+    background-color: #4739a0;
     display: flex;
     height: 100vh;
     font-family: Arial, sans-serif;
@@ -13,7 +13,7 @@ body {
 }
 
 .background-container {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #2d3493;
     position: absolute;
     top: 88px;
     left: 450px;
@@ -47,64 +47,55 @@ body {
     color: black;
 }
 
-.background-register-container {
-    background-color: rgb(248, 5, 187);
-    position: absolute;
-    top: 225px;
-    left: 200px;
-    border-radius: 13px;
+.button-container {
+    display: center;
+    justify-content: space-between;
 }
 
-.register-container{
+.button-register {
+    background-color: #fa0644;
+    color: white;
     width: 200px;
-    height: 65px;
-}
-
-.background-support-container {
-    background-color: purple;
-    position: absolute;
-    top: 350px;
-    left: 200px;
+    height: 90px;
     border-radius: 13px;
+    margin-top: 225px;
+    margin-left: 200px;
+    font-size: 25px;
+    cursor: pointer;
 }
 
-.support-container{
+.button-container-support {
+    display: center;
+    justify-content: space-between;
+}
+
+.button-support {
+    background-color: #b82a9c;
+    color: white;
     width: 200px;
-    height: 65px;
+    height: 90px;
+    border-radius: 13px;
+    margin-top: 350px;
+    margin-left: -200px;
+    font-size: 25px;
+    cursor: pointer;
 }
 
-.background-sac-container {
+.button-container-sac {
+    display: center;
+    justify-content: space-between;
+}
+
+.button-sac {
     background-color: orangered;
-    position: absolute;
-    top: 475px;
-    left: 200px;
-    border-radius: 13px;
-}
-
-.sac-container{
+    color: white;
     width: 200px;
-    height: 80px;
-}
-
-.text-register {
-    color: white;
-    margin-top: 35px;
-    text-align: center;
+    height: 90px;
+    border-radius: 13px;
+    margin-top: 475px;
+    margin-left: -200px;
     font-size: 25px;
-}
-
-.text-support {
-    color: white;
-    margin-top: 35px;
-    text-align: center;
-    font-size: 25px;
-}
-
-.text-sac {
-    color: white;
-    margin-top: 20px;
-    text-align: center;
-    font-size: 25px;
+    cursor: pointer;
 }
 
 .circle {

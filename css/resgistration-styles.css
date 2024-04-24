@@ -6,7 +6,7 @@
 
 /* Body styles */
 body {
-  background-color: #2a9df4;
+  background-color: #4739a0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@ body {
 
 /* Background container */
 .background-container {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #ec042b;
   padding: 50px;
   border-radius: 13px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
@@ -30,6 +30,7 @@ body {
 
 /* Header */
 .header {
+  color: white;
   font-size: 32px;
   margin-bottom: 20px;
   text-align: center;
