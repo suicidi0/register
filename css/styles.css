@@ -7,7 +7,10 @@
 
 /* Body styles */
 body {
-  background-color: #4739a0;
+  background: hsla(345, 49%, 63%, 1);
+  background: linear-gradient(135deg, hsla(345, 49%, 63%, 1) 0%, hsla(248, 45%, 52%, 1) 66%);
+  background: -moz-linear-gradient(135deg, hsla(345, 49%, 63%, 1) 0%, hsla(248, 45%, 52%, 1) 66%);
+  background: -webkit-linear-gradient(135deg, hsla(345, 49%, 63%, 1) 0%, hsla(248, 45%, 52%, 1) 66%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +20,7 @@ body {
 
 /* Background container */
 .background-container {
-  background-color: #ec042b;
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 50px;
   border-radius: 13px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
@@ -31,7 +34,7 @@ body {
 
 /* Header */
 .header {
-  color: white;
+  /* color: white; */
   font-size: 32px;
   margin-bottom: 20px;
   text-align: center;
@@ -55,6 +58,10 @@ body {
   font-size: 16px;
 }
 
+.form-group input:focus {
+  outline: none;
+}
+
 /* Style the toggle-password button */
 .toggle-password {
   position: absolute;
@@ -68,23 +75,40 @@ body {
 
 /* Button container */
 .button-container {
-  display: center;
+  margin-top: 20px;
+  display: flex;
   justify-content: space-between;
 }
 
 /* Button styles */
-.button {
-  width: 185px;
-  background-color: #ff9900;
+.button-login,
+.button-register {
+  width: 48%;
   color: #fff;
   border: none;
-  padding: 10px;
+  padding: 13px;
   border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.5s ease, color 0.3s;
 }
 
-.button:hover {
-  background-color: #cc7a00;
+.button-login {
+  margin-left: 14px;
+  margin-right: 5px;
+  background-color: #0866FF;
+}
+
+.button-login:hover {
+  background-color: #1877F2;
+}
+
+.button-register {
+  margin-left: 5px;
+  margin-right: 14px;
+  background-color: #42B72A;
+}
+
+.button-register:hover {
+  background-color: #36A420;
 }
