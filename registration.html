@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" oncontextmenu="return false">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration</title>
+  <title>Cadworks</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/resgistration-styles.css">
 </head>
@@ -11,7 +11,7 @@
   <div class="background-container">
     <div class="container">
       <div class="menu">
-        <h1 class="header">Sign Up</h1>
+        <h1 class="header">Create Account</h1>
         <div class="input-box">
           <input type="text" id="first-name" placeholder="First Name">
           <input type="text" id="last-name" placeholder="Last Name">
@@ -31,8 +31,10 @@
           <img class="toggle-password" src="assets/show.png" onclick="togglePasswordVisibility('confirm-password')" alt="Show" />
         </div>
         <div class="button-container">
-          <button class="button back-button" onclick="back_button()">Back to Login</button>
           <button class="button signup-button" onclick="signup()">Sign Up</button>
+        </div>
+        <div>
+           <img class="back-button" src="assets/back.png" onclick="back_button()"/>
         </div>
       </div>
     </div>
