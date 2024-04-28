@@ -1,11 +1,9 @@
-/* Resetting default margin and padding */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body styles */
 body {
   background: hsla(345, 49%, 63%, 1);
   background: linear-gradient(135deg, hsla(345, 49%, 63%, 1) 0%, hsla(248, 45%, 52%, 1) 66%);
@@ -20,21 +18,18 @@ body {
   user-select: none;
 }
 
-/* Background container */
 .background-container {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.35);
   padding: 50px;
   border-radius: 13px;
-  box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Main container */
 .container {
   width: 400px;
   text-align: center;
 }
 
-/* Header */
 .header {
   /* color: white; */
   font-size: 32px;
@@ -42,7 +37,6 @@ body {
   text-align: center;
 }
 
-/* Form styles */
 .menu {
   width: 100%;
 }
@@ -66,7 +60,6 @@ body {
   border: 1px solid #555;
 }
 
-/* Style the toggle-password button */
 .toggle-password {
   position: absolute;
   top: 50%;
@@ -77,14 +70,12 @@ body {
   height: 24px;
 }
 
-/* Button container */
 .button-container {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }
 
-/* Button styles */
 .button-login,
 .button-register {
   width: 48%;
