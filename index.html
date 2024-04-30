@@ -1,30 +1,37 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadworks</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <div class="background-container">
     <div class="container">
       <div class="menu">
         <h1 class="header">Welcome back!</h1>
-        <div class="form-group">
-          <input type="text" id="royal_email" placeholder="Email or Username">
-        </div>
-        <div class="form-group">
-          <input type="password" id="password" placeholder="Password">
-          <img class="toggle-password" src="assets/show.png" onclick="togglePasswordVisibility('password')" alt="Show" />
-        </div>
-        <div class="button-container">
-          <button class="button-login" onclick="login()">Login</button>
-          <button class="button-register" onclick="register()">Register</button>
-        </div>
+        <form>
+          <div class="form-group">
+            <input type="text" id="royal_email" placeholder="Email or Username" required>
+          </div>
+          <div class="form-group">
+            <input type="password" id="password" placeholder="Password" required>
+            <img class="toggle-password" src="assets/show.png" onclick="togglePasswordVisibility('password')"
+              alt="Show" />
+          </div>
+          <div class="button-container">
+            <button type="submit" class="button-login">Login</button>
+            <button type="button" class="button-register" onclick="register()">Register</button>
+          </div>
+        </form>
+
+        <script src="js/script.js"></script>
       </div>
     </div>
   </div>
-  <script src="js/script.js"></script>
 </body>
+
 </html>

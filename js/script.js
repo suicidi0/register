@@ -21,70 +21,6 @@ function register() {
   window.location.href = "registration.html";
 }
 
-var notificationQueue = [];
-var notificationHeight = 40;
-var notificationOffset = 10;
-var startingSpace = 20;
-
-function showNotification(message, inputId) {
-  var notification = document.createElement("div");
-  notification.textContent = message;
-  notification.classList.add("notification");
-
-  var topPosition = startingSpace + (notificationQueue.length * (notificationHeight + notificationOffset));
-
-  notification.style.top = topPosition + "px";
-
-  document.body.appendChild(notification);
-
-  notificationQueue.push(notification);
-
-  setTimeout(function() {
-    notification.offsetHeight;
-
-    notification.classList.add("show");
-
-    setTimeout(function() {
-      notification.classList.add("hide");
-    }, 3000);
-  }, 150 * notificationQueue.length);
-}
-
-function fadeOutNotification(notification) {
-  notification.addEventListener("transitionend", function() {
-    notification.remove();
-
-    var index = notificationQueue.indexOf(notification);
-    if (index !== -1) {
-      notificationQueue.splice(index, 1);
-    }
-
-    updateNotificationPositions();
-
-    if (notificationQueue.length > 0) {
-      setTimeout(function() {
-        fadeOutNextNotification();
-      }, 100);
-    }
-  });
-}
-
-function fadeOutNextNotification() {
-  var nextNotification = notificationQueue[0];
-  if (nextNotification) {
-    fadeOutNotification(nextNotification);
-  }
-}
-
-function showNextNotification() {
-  var nextNotification = notificationQueue[0];
-  if (nextNotification) {
-    nextNotification.offsetHeight;
-
-    nextNotification.classList.add("show");
-  }
-}
-
 function signup() {
   var firstName = document.getElementById("first-name").value;
   var lastName = document.getElementById("last-name").value;
@@ -93,41 +29,8 @@ function signup() {
   var password = document.getElementById("password").value;
   var confirmPassword = document.getElementById("confirm-password").value;
 
-  notificationQueue = [];
-
-  var notifications = [];
-
-  // Check if any of the required fields are empty and store notifications
-  if (!firstName) {
-    notifications.push({ message: "Please fill in your first name.", inputId: "first-name" });
-  }
-
-  if (!lastName) {
-    notifications.push({ message: "Please fill in your last name.", inputId: "last-name" });
-  }
-
-  if (!username) {
-    notifications.push({ message: "Please fill in your username.", inputId: "username" });
-  }
-
-  if (!email) {
-    notifications.push({ message: "Please fill in your email.", inputId: "email" });
-  }
-
-  if (!password) {
-    notifications.push({ message: "Please fill in your password.", inputId: "password" });
-  }
-
-  if (!confirmPassword) {
-    notifications.push({ message: "Please fill in your confirm password.", inputId: "confirm-password" });
-  }
-
-  notifications.forEach(function(notification) {
-    showNotification(notification.message, notification.inputId);
-  });
-
-  if (notifications.length > 0) {
-    return;
+  if (password.trim() === "" || confirmPassword.trim() === "") {
+    return
   }
 
   // TODO: implementar mais notifications abaixo
@@ -139,7 +42,7 @@ function signup() {
   var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!emailPattern.test(email)) {
-    alert("Please enter a valid email address");
+    // alert("Please enter a valid email address");
     return;
   }
 

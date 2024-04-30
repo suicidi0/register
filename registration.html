@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" oncontextmenu="return false">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,38 +8,47 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/resgistration-styles.css">
 </head>
+
 <body>
   <div class="background-container">
     <div class="container">
-      <div class="menu">
-        <h1 class="header">Create Account</h1>
+      <h1 class="header">Create Account</h1>
+      <form>
         <div class="input-box">
-          <input type="text" id="first-name" placeholder="First Name">
-          <input type="text" id="last-name" placeholder="Last Name">
+          <input type="text" id="first-name" placeholder="First Name" required>
+          <input type="text" id="last-name" placeholder="Last Name" required>
         </div>
+
         <div class="input-box">
-          <input type="text" id="username" placeholder="Username">
+          <input type="text" id="username" placeholder="Username" required>
         </div>
+
         <div class="input-box">
-          <input type="email" id="email" placeholder="Email">
+          <input type="email" id="email" placeholder="Email" required
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
         </div>
+
         <div class="input-box">
-          <input type="password" id="password" placeholder="Password">
-          <img class="toggle-password" src="assets/show.png" onclick="togglePasswordVisibility('password')" alt="Show" />
+          <input type="password" id="password" placeholder="Password" required>
+          <img class="toggle-password" src="assets/show.png" onclick="togglePasswordVisibility('password')" alt="Show">
         </div>
+
         <div class="input-box">
-          <input type="password" id="confirm-password" placeholder="Confirm Password">
-          <img class="toggle-password" src="assets/show.png" onclick="togglePasswordVisibility('confirm-password')" alt="Show" />
+          <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+          <img class="toggle-password" src="assets/show.png" onclick="togglePasswordVisibility('confirm-password')"
+            alt="Show">
         </div>
+
         <div class="button-container">
           <button class="button signup-button" onclick="signup()">Sign Up</button>
         </div>
-        <div>
-           <img class="back-button" src="assets/back.png" onclick="back_button()"/>
-        </div>
+      </form>
+      <div class="back-button-container">
+        <img class="back-button" src="assets/back.png" onclick="back_button()" alt="Back">
       </div>
     </div>
   </div>
   <script src="js/script.js"></script>
 </body>
+
 </html>

@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 * {
+  font-family: lato, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,7 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: Arial, sans-serif;
+  font-family: lato, sans-serif;
   user-select: none;
 }
 
@@ -36,10 +39,6 @@ body {
   text-align: center;
 }
 
-.menu {
-  width: 100%;
-}
-
 .input-box {
   margin-bottom: 20px;
   display: flex;
@@ -55,11 +54,11 @@ body {
   width: calc(50% - 5px);
   box-sizing: border-box;
   box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.1);
+  outline: 1px solid #555;
 }
 
 .input-box input:focus {
-  outline: 1px solid #555;
-  border: 1px solid #555;
+  outline: 2px solid #555;
 }
 
 .input-box #first-name {
@@ -83,7 +82,7 @@ body {
   border: none;
   padding: 13px;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   transition: background-color 0.5s ease, color 0.3s;
   box-shadow: 0px 9px 30px rgba(255, 149, 5, 0.1);
@@ -137,25 +136,4 @@ body {
 .toggle-password {
   width: 24px;
   height: 24px;
-}
-
-.notification {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  background: red;
-  color: white;
-  padding: 10px;
-  border-radius: 7px;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  box-shadow: 0px 9px 30px rgba(255, 149, 5, 0.1);
-}
-
-.notification.show {
-  opacity: 1;
-}
-
-.notification.hide {
-  opacity: 0;
 }
