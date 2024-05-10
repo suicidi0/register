@@ -124,7 +124,7 @@ app.get('/authenticate', (req, res) => {
   if (verified) {
     res.send('Authenticated.');
   } else {
-    res.send('Authenticated.');
+    res.send('Invalid Token.');
   }
 })
 
