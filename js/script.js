@@ -1,4 +1,19 @@
-function login() {
+const mysql = require('mysql');
+const express = require('express');
+const speakeasy = require('speakeasy');
+const QRCode = require('qrcode');
+
+const app = express();
+const port = 3000;
+
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'password',
+  database: 'users',
+});
+
+async function login() {
   var royal_email = document.getElementById("royal_email").value;
   var password = document.getElementById("password").value;
 
@@ -11,6 +26,25 @@ function login() {
     return
   }
 
+  try {
+    await db.connect();
+    const sql = 'SELECT * FROM users WHERE (username = ? or email = ?) AND password = ?';
+    const [rows, field] = await db.query(sql, [royal_email, password, password]);
+
+    if (rows.length > 0) {
+      alert("Successfully logged in.");
+      console.log("Successful login for: " + royal_email);
+      window.location.href = "profile.html";
+    } else {
+      alert("Please fill with a valid email or username.");
+    }
+    await db.end();
+  }
+  catch (error) {
+    console.error(error);
+    alert('Something went wrong, please try again later.');
+  }
+
   // Debug message
   alert("Successfully logged in.");
 
@@ -21,7 +55,7 @@ function register() {
   window.location.href = "registration.html";
 }
 
-function signup() {
+async function signup() {
   var firstName = document.getElementById("first-name").value;
   var lastName = document.getElementById("last-name").value;
   var username = document.getElementById("username").value;
@@ -51,47 +85,52 @@ function signup() {
     return;
   }
 
-  // Essa parte de storage vai ficar infuncional com commits, caso queiram fazer testes simples é só descomittar :]
-  // Essa parte vai ser reescrevida com o banco de dados (MongoDB.org)
+  try {
+    await db.connect();
+    const sql = 'INSERT INTO users (firstName, secondName, username, email, password) VALUES (?,?,?,?,?)';
+    await db.query(sql, [firstName, lastName, username, email, password]);
+    await db.end();
 
-  // Storage start
-  // Create a new user object
-  // var newUser = {
-  //   firstName: firstName,
-  //   lastName: lastName,
-  //   username: username,
-  //   email: email,
-  //   password: password
-  // };
-
-  // Load existing profiles or initialize an empty array
-  // var existingProfiles = localStorage.getItem("profiles");
-  // var profilesArray = existingProfiles ? JSON.parse(existingProfiles) : [];
-
-  // Check if the username or email already exists
-  // var userExists = profilesArray.some(function(profile) {
-  //   return profile.username === username || profile.email === email;
-  // });
-
-  // if (userExists) {
-  //   alert("Username or email already exists");
-  //   return;
-  // }
-
-  // Add the new user to the profiles array
-  // profilesArray.push(newUser);
-
-  // Update the profiles in local storage
-  // localStorage.setItem("profiles", JSON.stringify(profilesArray));
-  // Storage end
-
-  // Redirect to the index page
-  window.location.href = "index.html";
+    window.location.href = "index.html";
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong, please try again later.");
+  }
 }
 
 function back_button() {
   window.location.href = "index.html";
 }
+
+app.get('/generate', (req, res) => {
+  const secret = speakeasy.generateSecret({length: 20});
+  QRCode.toDataURL(secret.otpauth_url, (err,data_url) => {
+    if (err) {
+      res.status(500).send('Error while generating QRCode.')
+    } else {
+      res.send('<img src="${data_url}">');
+    }
+  });
+});
+
+app.get('/authenticate', (req, res) => {
+  const { secret, token } = req.query;
+  const verified = speakeasy.totp.verify({
+    secret: secret,
+    encrypt: 'base32',
+    token: token,
+    window: 1
+  });
+  if (verified) {
+    res.send('Authenticated.');
+  } else {
+    res.send('Authenticated.');
+  }
+})
+
+app.listen(port, () => {
+  console.log(`http://localhost:${port}`);
+});
 
 function togglePasswordVisibility(inputId) {
   var passwordInput = document.getElementById(inputId);
